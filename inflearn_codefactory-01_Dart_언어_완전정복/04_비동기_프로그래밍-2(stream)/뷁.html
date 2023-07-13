@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+    let limit = 10000
+
+    let myDivTag = document.createElement('div')
+    let myTitle = document.createElement('h3')
+    myTitle.innerText = `${limit}보다 작은 소수들 띠용띠용`
+    myDivTag.append(myTitle)
+    document.body.append(myDivTag)
+    
+    let myUlTag = document.createElement('ul')
+       
+    let count = 1
+    
+    while (count < limit) {
+        let yaksu = []
+        // console.log(`count : ${count}`)
+        for (let i = 1; i <= count; i++) {
+            if (count % i === 0) {
+                yaksu.push(i)
+                // console.log(`i : ${i} / ${count%i}`)
+            }
+        }
+        if (yaksu.length === 2) {
+            // console.log(yaksu)
+            // console.log(`${count} 은/는 소수입니다.`)
+            let liTag = document.createElement('li')
+            liTag.innerText = `${count}`
+            myUlTag.append(liTag)
+        }
+        count += 1
+    }
+
+    document.body.append(myUlTag)
+
+
+    // myUlTag = document.createElement('ul')
+    // myLiTag = document.createElement('li')
+    // myText = document.createTextNode('asdf')
+    // myLiTag.append(myText)
+    // myUlTag.append(myLiTag)
+    // document.body.append(myUlTag)
+    
+
+
+
+</script>
+</body>
+</html>
